@@ -7,7 +7,7 @@ function User(props) {
                     props.isLoggedIn ? `${props.name} ${props.surname}` : 'giriş yapmadınız.'
                 }
             </h1>
-            {props.friends.map((f, i) => (
+            {props.friends.map((f) => (
                 <div key={f.id}>
                     {f.div}- {f.name}
                 </div>
