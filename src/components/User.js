@@ -1,18 +1,26 @@
-function User(props) {
-    console.log('props :>> ', props);
+import { PropTypes } from "prop-types";
+function User({ name, surname, isLoggedIn, friends }) {
     return (
         <>
             <h1>
                 {
-                    props.isLoggedIn ? `${props.name} ${props.surname}` : 'giriş yapmadınız.'
+                    isLoggedIn ? `${name} ${surname}` : 'giriş yapmadınız.'
                 }
             </h1>
-            {props.friends.map((f) => (
+            {friends.map((f) => (
                 <div key={f.id}>
-                    {f.div}- {f.name}
+                    {f.id}- {f.name}
                 </div>
             ))}
         </>
     )
 }
+
+User.propTypes = {
+    name: PropTypes.string,
+    surname: PropTypes.string,
+    isLoggedIn: PropTypes.bool,
+    friends: PropTypes.array
+};
+
 export default User
