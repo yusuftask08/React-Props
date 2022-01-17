@@ -18,7 +18,8 @@ const friends = [
 function App() {
   return (
     <div>
-      <User name="Yusuf"
+      <User
+        name="Yusuf"
         surname="taskiran"
         isLoggedIn={true}
         friends={friends}
